@@ -1,11 +1,9 @@
 :root {
-  --color-light: #fff;
-  --color-grey: #ebebeb;
-  --color-orange: #ff512f;
-  --color-dark: #333;
-  --color-black: #000;
-}
+  --color-light: #f0f0f0;
+  --color-grey: #a8a8a8;
+  --color-yellow: #ffc700;
+  --color-dark: #171717;
+  --color-black: #070707;
 
-$bp-desktop: 1279px;
-$bp-tablet: 768px;
-$bp-mobile: 480px;
+  --font: "Montserrat", sans-serif;
+}
