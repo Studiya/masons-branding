@@ -11,7 +11,7 @@
 body {
   color: var(--color-light);
   line-height: normal;
-  font-family: var(--font);
+  font-family: $font;
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
