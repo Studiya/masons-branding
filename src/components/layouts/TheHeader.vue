@@ -32,13 +32,9 @@
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="">Services</a></li>
-            <li class="header__nav-item"><a href="">Examples</a></li>
-            <li class="header__nav-item"><a href="">Special Offers</a></li>
-            <li class="header__nav-item"><a href="">Top Sales</a></li>
-            <li class="header__nav-item"><a href="">Catalog</a></li>
-            <li class="header__nav-item"><a href="">Feedback</a></li>
-            <li class="header__nav-item"><a href="">Contacts</a></li>
+            <li class="header__nav-item" v-for="item in navItems" :key="item.id">
+              <a :href="item.href" :name="item.text">{{ item.text }}</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -48,6 +44,45 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const navItems = [
+  {
+    id: 0,
+    href: '#',
+    text: 'Services'
+  },
+  {
+    id: 1,
+    href: '#',
+    text: 'Examples'
+  },
+  {
+    id: 2,
+    href: '#',
+    text: 'Special Offers'
+  },
+  {
+    id: 3,
+    href: '#',
+    text: 'Top Sales'
+  },
+  {
+    id: 4,
+    href: '#',
+    text: 'Catalog'
+  },
+  {
+    id: 5,
+    href: '#',
+    text: 'Feedback'
+  },
+  {
+    id: 6,
+    href: '#',
+    text: 'Contacts'
+  }
+]
+
 const searchValue = ref('Search')
 
 function focusSearch() {
@@ -141,10 +176,48 @@ function focusOutSearch() {
         color: var(--color-light);
         font-size: 18px;
         font-weight: 300;
+        @include transition((color), 0.3s, ease-out, 0s);
+        position: relative;
+
+        &:before {
+          content: attr(name);
+          color: transparent;
+          font-weight: 700;
+          display: block;
+          width: calc(100% + 10px);
+          @include position(absolute, 0, auto, auto, -2px, 0);
+          @include transition(color, 0.3s, ease-out, 0s);
+          pointer-events: none;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: calc(100% + 62px);
+          height: calc(100% + 30px);
+          @include position(
+            absolute,
+            calc((-100% - 30px) / 4),
+            auto,
+            auto,
+            calc((-100% - 62px) / 4.5),
+            -1
+          );
+          background-color: transparent;
+          transform: skew(-20deg);
+          @include transition(background-color, 0.3s, ease-out, 0s);
+        }
 
         &:hover {
-          font-weight: 700;
-          //with shadows
+          color: transparent;
+
+          &:before {
+            color: var(--color-black);
+          }
+
+          &:after {
+            background-color: var(--color-light);
+          }
         }
       }
     }
