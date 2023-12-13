@@ -4,7 +4,7 @@
       <div class="hero__inner">
         <h1 class="hero__title">masons <span class="accent">branding</span> wordshop</h1>
         <p class="hero__subtitle">High-quality printing and branding of clothing and accessories</p>
-        <button class="hero__btn btn btn__yellow" type="button">Catalog</button>
+        <button class="hero__btn btn btn_yellow" type="button">Catalog</button>
       </div>
     </div>
   </section>
@@ -13,6 +13,7 @@
 <style lang="scss" scoped>
 .hero {
   min-height: calc(100vh - 150px);
+  margin-bottom: 150px;
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
