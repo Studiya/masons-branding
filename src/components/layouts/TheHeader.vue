@@ -100,6 +100,7 @@ function focusOutSearch() {
 
 <style lang="scss" scoped>
 .header {
+  @include position(absolute, 0, 0, auto, 0, 1);
   .wrapper {
     max-width: 1010px;
   }
