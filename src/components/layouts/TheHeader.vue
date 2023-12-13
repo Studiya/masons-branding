@@ -178,6 +178,7 @@ function focusOutSearch() {
         font-weight: 300;
         @include transition((color), 0.3s, ease-out, 0s);
         position: relative;
+        // @include flex(flex, row, center, center, nowrap, unset);
 
         &:before {
           content: attr(name);
@@ -195,16 +196,9 @@ function focusOutSearch() {
           display: block;
           width: calc(100% + 62px);
           height: calc(100% + 30px);
-          @include position(
-            absolute,
-            calc((-100% - 30px) / 4),
-            auto,
-            auto,
-            calc((-100% - 62px) / 4.5),
-            -1
-          );
+          @include position(absolute, 50%, auto, auto, 50%, -1);
+          transform: translate(-50%, -50%) skew(-20deg);
           background-color: transparent;
-          transform: skew(-20deg);
           @include transition(background-color, 0.3s, ease-out, 0s);
         }
 
