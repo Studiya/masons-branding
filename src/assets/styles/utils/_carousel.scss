@@ -1,0 +1,42 @@
+.carousel__prev,
+.carousel__next {
+  &:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border-left: 2px solid var(--color-light);
+    border-top: 2px solid var(--color-light);
+    @include position(absolute, 0, 0, 0, 0, 0);
+    @include transition(transform, 0.3s, ease-out, 0s);
+  }
+
+  &:hover {
+    &:before {
+      transform: scale(1.1);
+    }
+  }
+
+  &--disabled {
+    &:hover {
+      &:before {
+        transform: none;
+      }
+    }
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.carousel__prev {
+  @include position(absolute, 50%, auto, 0, -20px !important, 0);
+  transform: rotate(-45deg) !important;
+}
+
+.carousel__next {
+  @include position(absolute, 50%, -20px, 0, auto !important, 0);
+  transform: rotate(135deg) !important;
+}
