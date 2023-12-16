@@ -31,43 +31,43 @@ const examplesList = [
   {
     id: 0,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 1,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 2,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 3,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 4,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 5,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 6,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/examples-section/item.webp',
     imgAlt: 't-shirt'
   }
 ]

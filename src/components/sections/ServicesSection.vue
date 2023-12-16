@@ -23,35 +23,35 @@ const servicesList = [
     id: 0,
     title: 'Flex/flock film printing',
     subtitle: 'High-quality printing for small runs',
-    imgSrc: 'src/assets/images/services-section/service-1.png',
+    imgSrc: 'src/assets/images/services-section/service-1.webp',
     imgAlt: 'print machine'
   },
   {
     id: 1,
     title: 'Heat resistance of images',
     subtitle: 'Can withstand automatic washing',
-    imgSrc: 'src/assets/images/services-section/service-2.png',
+    imgSrc: 'src/assets/images/services-section/service-2.webp',
     imgAlt: 'fever'
   },
   {
     id: 2,
     title: 'Flexible scaling',
     subtitle: 'We carry out orders of any size',
-    imgSrc: 'src/assets/images/services-section/service-3.png',
+    imgSrc: 'src/assets/images/services-section/service-3.webp',
     imgAlt: 'printer'
   },
   {
     id: 3,
     title: 'Heat resistance of images',
     subtitle: 'Can withstand automatic washing',
-    imgSrc: 'src/assets/images/services-section/service-2.png',
+    imgSrc: 'src/assets/images/services-section/service-2.webp',
     imgAlt: 'fever'
   },
   {
     id: 4,
     title: 'Flexible scaling',
     subtitle: 'We carry out orders of any size',
-    imgSrc: 'src/assets/images/services-section/service-3.png',
+    imgSrc: 'src/assets/images/services-section/service-3.webp',
     imgAlt: 'printer'
   }
 ]
@@ -89,7 +89,7 @@ const servicesList = [
       display: block;
       @include position(absolute, 0, 0, 0, 0, -1);
       @include backgroundImg(
-        '@/assets/images/services-section/item-bg.png',
+        '@/assets/images/services-section/item-bg.webp',
         bottom left,
         cover,
         no-repeat

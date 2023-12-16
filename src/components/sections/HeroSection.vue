@@ -17,7 +17,7 @@
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
-      '@/assets/images/hero-section/hero-bg.jpg',
+      '@/assets/images/hero-section/hero-bg.webp',
       top center,
       cover,
       no-repeat

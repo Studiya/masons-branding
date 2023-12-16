@@ -37,7 +37,7 @@ const offersList = [
     id: 0,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -45,7 +45,7 @@ const offersList = [
     id: 1,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -53,7 +53,7 @@ const offersList = [
     id: 2,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   }
@@ -66,7 +66,7 @@ const offersList = [
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
-      '@/assets/images/offers-section/offers-bg.png',
+      '@/assets/images/offers-section/offers-bg.webp',
       center,
       100% 600px,
       no-repeat

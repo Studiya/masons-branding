@@ -18,7 +18,7 @@
           </div>
         </form>
         <div class="header__logo">
-          <a href="#"><img src="@/assets/images/logo.png" alt="logo" /></a>
+          <a href="#"><img src="@/assets/images/logo.webp" alt="logo" /></a>
         </div>
         <div class="header__icons">
           <ul class="header__icons-list">
