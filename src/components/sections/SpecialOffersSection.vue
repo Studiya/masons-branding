@@ -11,7 +11,7 @@
               <p class="special-offers__slide-text">{{ item.text }}</p>
               <a class="special-offers__slide-btn btn btn_black" :href="item.href"> Read more </a>
             </div>
-            <img :src="item.imgSrc" :alt="item.imgAlt"
+            <img class="special-offers__slide-img" :src="item.imgSrc" :alt="item.imgAlt"
           /></Slide>
           <template #addons>
             <Navigation />
@@ -37,7 +37,7 @@ const offersList = [
     id: 0,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.png',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -45,7 +45,7 @@ const offersList = [
     id: 1,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.png',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -53,7 +53,7 @@ const offersList = [
     id: 2,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/examples-section/item.png',
+    imgSrc: 'src/assets/images/offers-section/offer-item.png',
     imgAlt: 't-shirt',
     href: '#'
   }
@@ -65,6 +65,12 @@ const offersList = [
 
   .wrapper {
     max-width: 1440px;
+    @include backgroundImg(
+      '@/assets/images/offers-section/offers-bg.png',
+      center,
+      100% 600px,
+      no-repeat
+    );
   }
 
   &__inner {
@@ -76,7 +82,34 @@ const offersList = [
     color: var(--color-grey);
     font-size: 32px;
     font-weight: 300;
-    margin-bottom: 30px;
+  }
+
+  &__slide {
+    text-align: left;
+    gap: 24px;
+
+    &-title {
+      color: var(--color-black);
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      color: var(--color-black);
+      font-size: 24px;
+      margin-bottom: 34px;
+    }
+
+    &-btn {
+      margin-left: 10px;
+      display: inline-block;
+      box-shadow: none;
+    }
+
+    &-img {
+      width: 511px;
+    }
   }
 }
 </style>

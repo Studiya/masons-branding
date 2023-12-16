@@ -40,3 +40,22 @@
   @include position(absolute, 50%, -20px, 0, auto !important, 0);
   transform: rotate(135deg) !important;
 }
+
+.special-offers {
+  .carousel__prev,
+  .carousel__next {
+    display: block;
+    &:before {
+      border-left: 2px solid var(--color-black);
+      border-top: 2px solid var(--color-black);
+    }
+  }
+
+  .carousel__prev {
+    left: -60px !important;
+  }
+
+  .carousel__next {
+    right: -60px !important;
+  }
+}
