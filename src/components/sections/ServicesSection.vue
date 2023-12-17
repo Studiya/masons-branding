@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="services__inner">
         <h2 class="services__title">Our <span class="accent">Services</span></h2>
-        <p class="services__subtitle">All for your enjoy</p>
+        <p class="services__subtitle subtitle">All for your enjoy</p>
         <ul class="services__list">
           <li class="services__item" v-for="item in servicesList" :key="item.id">
             <h3 class="services__item-title">{{ item.title }}</h3>
@@ -69,9 +69,6 @@ const servicesList = [
   }
 
   &__subtitle {
-    color: var(--color-grey);
-    font-size: 32px;
-    font-weight: 300;
     margin-bottom: 83px;
   }
 

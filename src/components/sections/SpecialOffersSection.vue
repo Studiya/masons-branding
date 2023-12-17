@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="special-offers__inner">
         <h3 class="special-offers__title"><span class="accent">Special</span> offers</h3>
-        <p class="special-offers__subtitle">Hurry up to order</p>
+        <p class="special-offers__subtitle subtitle">Hurry up to order</p>
         <Carousel class="special-offers__carousel" v-bind="settings">
           <Slide class="special-offers__slide" v-for="item in offersList" :key="item.id">
             <div class="special-offers__slide-descr">
@@ -79,9 +79,7 @@ const offersList = [
   }
 
   &__subtitle {
-    color: var(--color-grey);
-    font-size: 32px;
-    font-weight: 300;
+    color: var(--color-light);
   }
 
   &__slide {

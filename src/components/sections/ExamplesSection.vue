@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="examples__inner">
         <h3 class="examples__title"><span class="accent">Exam</span>ples</h3>
-        <p class="examples__subtitle">You can wear it</p>
+        <p class="examples__subtitle subtitle">You can wear it</p>
         <Carousel class="examples__carousel" v-bind="settings">
           <Slide class="examples__slide" v-for="item in examplesList" :key="item.id">
             <a :href="item.href"><img :src="item.imgSrc" :alt="item.imgAlt" /></a
@@ -87,9 +87,6 @@ const examplesList = [
   }
 
   &__subtitle {
-    color: var(--color-grey);
-    font-size: 32px;
-    font-weight: 300;
     margin-bottom: 30px;
   }
 
