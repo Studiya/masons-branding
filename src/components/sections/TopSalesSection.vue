@@ -157,7 +157,7 @@ function filterItemToggle(item) {
   }
 
   &__list {
-    @include flex(flex, row, center, flex-start, wrap, 25px 25px);
+    @include flex(flex, row, flex-start, flex-start, wrap, 25px 25px);
   }
 
   &__item {
