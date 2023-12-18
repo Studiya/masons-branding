@@ -1,5 +1,7 @@
 .carousel__prev,
 .carousel__next {
+  @include transition(background-color, 0.3s, ease-out, 0s);
+
   &:before {
     content: "";
     display: block;
@@ -57,5 +59,38 @@
 
   .carousel__next {
     right: -60px !important;
+  }
+}
+
+.feedback {
+  .carousel__prev,
+  .carousel__next {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-black);
+    border-radius: 50%;
+
+    &:before {
+      inset: calc(51% - 12px) calc(47% - 12px) auto auto;
+    }
+
+    &:hover {
+      background-color: var(--color-dark);
+    }
+
+    &--disabled {
+      &:hover {
+        background-color: var(--color-black);
+      }
+    }
+  }
+
+  .carousel__prev {
+    left: calc(-43px - 100px) !important;
+  }
+
+  .carousel__next {
+    right: calc(-43px - 100px) !important;
   }
 }
