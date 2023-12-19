@@ -22,6 +22,15 @@
       cover,
       no-repeat
     );
+    position: relative;
+
+    &:before {
+      content: '';
+      @include position(absolute, auto, 0, -6px, 0, 1);
+      height: 15px;
+      background-color: var(--color-black);
+      filter: blur(5px);
+    }
   }
 
   &__inner {
