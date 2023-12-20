@@ -6,7 +6,7 @@
         <p class="catalog__subtitle subtitle">Choose whatever you like</p>
         <ul class="catalog__list">
           <li class="catalog__item" v-for="item in catalogList" :key="item.id">
-            <a class="catalog__item-link" :href="item.href">
+            <a class="catalog__item-link" :href="item.href" target="_blank">
               <img :src="item.imgSrc" :alt="item.imgAlt" class="catalog__item-img" />
               <p class="catalog__item-descr">{{ item.descr }}</p>
               <p class="catalog__item-details">{{ item.details }}</p>

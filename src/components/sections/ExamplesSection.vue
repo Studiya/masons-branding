@@ -6,7 +6,7 @@
         <p class="examples__subtitle subtitle">You can wear it</p>
         <Carousel class="examples__carousel" v-bind="settings">
           <Slide class="examples__slide" v-for="item in examplesList" :key="item.id">
-            <a :href="item.href"><img :src="item.imgSrc" :alt="item.imgAlt" /></a
+            <a :href="item.href" target="_blank"><img :src="item.imgSrc" :alt="item.imgAlt" /></a
           ></Slide>
           <template #addons>
             <Navigation />

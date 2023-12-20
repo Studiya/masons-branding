@@ -9,7 +9,9 @@
             <div class="special-offers__slide-descr">
               <h4 class="special-offers__slide-title">{{ item.title }}</h4>
               <p class="special-offers__slide-text">{{ item.text }}</p>
-              <a class="special-offers__slide-btn btn btn_black" :href="item.href"> Read more </a>
+              <a class="special-offers__slide-btn btn btn_black" :href="item.href" target="_blank">
+                Read more
+              </a>
             </div>
             <img class="special-offers__slide-img" :src="item.imgSrc" :alt="item.imgAlt"
           /></Slide>

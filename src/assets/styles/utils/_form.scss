@@ -1,0 +1,30 @@
+.input-block {
+  position: relative;
+
+  &:before {
+    content: "";
+    background-color: var(--color-dark);
+    transform: skew(-10deg);
+    @include position(absolute, 0, 0, 0, 0, -1);
+  }
+}
+
+label {
+  display: none;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  width: 100%;
+  padding: 19px 40px 20px;
+  color: var(--color-yellow);
+  font-size: 16px;
+  font-weight: 400;
+
+  &::placeholder {
+    color: var(--color-yellow);
+  }
+}

@@ -16,7 +16,7 @@
         </ul>
         <ul class="top-sales__list">
           <li class="top-sales__item" v-for="item in topSalesList" :key="item.id">
-            <a class="top-sales__item-link" :href="item.href">
+            <a class="top-sales__item-link" :href="item.href" target="_blank">
               <img class="top-sales__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
               <p class="top-sales__item-descr">{{ item.descr }}</p>
               <p class="top-sales__item-price">{{ item.price }}</p>
