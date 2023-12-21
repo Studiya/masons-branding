@@ -73,14 +73,18 @@
         <li class="contacts__item contacts__schedule">
           <SvgIcon class="contacts__item-icon" name="icons" setSymbol="icon-schedule" />
           <h4 class="contacts__item-title"></h4>
-          <p class="contacts__item-info"></p>
+          <div class="contacts__item-info">
+            <p>Monday - Friday</p>
+            <p>9:00 - 18:00</p>
+          </div>
         </li>
         <li class="contacts__item contacts__address">
           <SvgIcon class="contacts__item-icon" name="icons" setSymbol="icon-map" />
           <h4 class="contacts__item-title"></h4>
           <div class="contacts__item-info">
             <a href="https://maps.app.goo.gl/jQP8BHgX9nbPvSww5" target="_blank"
-              >Oosterdok 2, 1011 VX Amsterdam</a
+              ><p>Oosterdok 2, 1011 VX</p>
+              <p>Amsterdam</p></a
             >
           </div>
         </li>
@@ -112,6 +116,7 @@
 
   &__form-map {
     @include flex(flex, row, space-between, flex-start, nowrap, 110px);
+    margin-bottom: 150px;
   }
 
   &-form {
@@ -154,6 +159,40 @@
   &__map {
     width: 535px;
     height: 500px;
+  }
+
+  &__list {
+    @include flex(flex, row, flex-start, flex-start, wrap, 60px);
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    flex-basis: calc((100% - 60px * 2) / 3);
+    background-color: var(--color-dark);
+    border-radius: 20px 0 20px 0;
+    text-align: center;
+    padding: 58px 0 76px;
+
+    &-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 47px;
+    }
+
+    &-info {
+      font-size: 16px;
+
+      a {
+        color: var(--color-light);
+        text-decoration: underline;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
 </style>

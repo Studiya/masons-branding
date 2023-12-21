@@ -120,6 +120,7 @@ function focusOutSearch() {
     }
 
     &-label {
+      display: block;
       width: 15px;
       height: 15px;
       @include position(absolute, 7px, 0, 0, 13px, 0);
@@ -160,6 +161,11 @@ function focusOutSearch() {
         display: inline-block;
         width: 25px;
         height: 25px;
+        @include transition(transform, 0.3s, ease-in, 0s);
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
