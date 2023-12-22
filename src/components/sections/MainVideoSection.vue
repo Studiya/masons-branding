@@ -1,5 +1,5 @@
 <template>
-  <section class="main-video">
+  <section class="main-video" id="video">
     <div class="wrapper">
       <div class="main-video__head">
         <h3 class="main-video__title">Still have any <span class="accent">doubts</span>?</h3>

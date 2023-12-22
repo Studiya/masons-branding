@@ -1,5 +1,5 @@
 <template>
-  <section class="top-sales">
+  <section class="top-sales" id="topSales">
     <div class="wrapper">
       <div class="top-sales__inner">
         <h2 class="top-sales__title">Top <span class="accent">Sales</span></h2>

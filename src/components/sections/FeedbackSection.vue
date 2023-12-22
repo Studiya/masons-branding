@@ -1,5 +1,5 @@
 <template>
-  <section class="feedback">
+  <section class="feedback" id="feedback">
     <div class="wrapper">
       <h2 class="feedback__title"><span class="accent">Feed</span>back</h2>
       <p class="feedback__subtitle subtitle">Just look what your neighbor says about us!</p>

@@ -1,5 +1,5 @@
 <template>
-  <section class="special-offers">
+  <section class="special-offers" id="specialOffers">
     <div class="wrapper">
       <div class="special-offers__inner">
         <h3 class="special-offers__title"><span class="accent">Special</span> offers</h3>
