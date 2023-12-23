@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="footer__inner">
         <div class="footer__soc">
-          <a href="#"><img src="@/assets/images/logo.webp" alt="logo" /></a>
+          <a href="#"><img class="footer__logo" src="@/assets/images/logo.webp" alt="logo" /></a>
           <ul class="footer__soc-list">
             <li class="footer__soc-item">
               <a href="#"><SvgIcon name="icons" setSymbol="icon-telegram" /></a>
@@ -35,8 +35,10 @@
           <h4 class="footer__form-title">If you want to know about new products</h4>
           <p class="footer__form-subtitle">Receive letters with surprises from us</p>
           <label for="subEmail">Email</label>
-          <input type="email" id="subEmail" placeholder="Email" />
-          <button type="submit">Apply</button>
+          <div class="footer__form-inner">
+            <input type="email" id="subEmail" placeholder="Email" />
+            <button class="footer__form-btn btn btn_yellow" type="submit">Apply</button>
+          </div>
         </form>
       </div>
     </div>
@@ -102,6 +104,116 @@ const navList2 = [
 
   &__inner {
     @include flex(flex, row, space-between, center, wrap, 75px);
+  }
+
+  &__logo {
+    width: 184px;
+    margin-bottom: 14px;
+  }
+
+  &__soc {
+    &-list {
+      @include flex(flex, row, flex-start, flex-start, wrap, 30px);
+    }
+
+    &-item {
+      a {
+        width: 40px;
+        height: 40px;
+        background: var(--color-yellow);
+        border-radius: 5px;
+        @include flex(flex, row, center, center, nowrap, unset);
+        @include transition(transform, 0.3s, ease-in, 0s);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      svg {
+        width: 60%;
+        height: 60%;
+      }
+    }
+  }
+
+  &__nav {
+    @include flex(flex, row, flex-start, flex-start, wrap, 75px);
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    &-list {
+      @include flex(flex, column, flex-start, flex-start, nowrap, 8px);
+    }
+
+    &-item {
+      a {
+        color: var(--color-grey);
+        font-size: 16px;
+        display: inline-block;
+        position: relative;
+        @include transition(color, 0.3s, ease-in, 0s);
+
+        &:after {
+          content: '';
+          display: block;
+          width: 0px;
+          height: 2px;
+          background-color: var(--color-light);
+          @include transition(width, 0.3s, ease-in, 0s);
+          @include position(absolute, auto, 0, -2px, 0, 0);
+        }
+
+        &:hover {
+          color: var(--color-light);
+
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__form {
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    &-subtitle {
+      color: var(--color-grey);
+      font-size: 14px;
+      margin-bottom: 11px;
+    }
+
+    &-inner {
+      @include flex(flex, row, flex-start, center, nowrap, 15px);
+    }
+
+    input {
+      font-size: 12px;
+      font-weight: 300;
+      padding: 7px 14px 8px;
+      background-color: #363636;
+      max-width: 200px;
+
+      &::placeholder {
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+
+    &-btn {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 16px 8px;
+      box-shadow: none;
+    }
   }
 }
 </style>
