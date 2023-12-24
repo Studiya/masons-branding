@@ -108,13 +108,18 @@ function focusOutSearch() {
   &__inner {
     @include flex(flex, row, space-between, center, wrap, 25px 40px);
     padding: 20px 0 16px;
+
+    @media screen and (max-width: $bp-medium) {
+      padding: 20px 15px 16px;
+      gap: 25px 30px;
+    }
   }
 
   &__search {
     flex-basis: calc((100% - 40px * 2) / 3);
 
     &-inner {
-      width: 225px;
+      max-width: 225px;
       height: 30px;
       position: relative;
     }
@@ -145,7 +150,7 @@ function focusOutSearch() {
 
     a {
       display: inline-block;
-      width: 184px;
+      max-width: 184px;
     }
   }
 
@@ -176,6 +181,10 @@ function focusOutSearch() {
     &-list {
       margin: 0 auto;
       @include flex(flex, row, center, flex-start, nowrap, 50px);
+
+      @media screen and (max-width: $bp-medium) {
+        gap: 20px;
+      }
     }
 
     &-item {
@@ -185,7 +194,6 @@ function focusOutSearch() {
         font-weight: 300;
         @include transition((color), 0.3s, ease-out, 0s);
         position: relative;
-        // @include flex(flex, row, center, center, nowrap, unset);
 
         &:before {
           content: attr(name);
@@ -207,6 +215,11 @@ function focusOutSearch() {
           transform: translate(-50%, -50%) skew(-20deg);
           background-color: transparent;
           @include transition(background-color, 0.3s, ease-out, 0s);
+
+          @media screen and (max-width: $bp-medium) {
+            width: calc(100% + 20px);
+            height: calc(100% + 10px);
+          }
         }
 
         &:hover {

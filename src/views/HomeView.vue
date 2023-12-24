@@ -1,14 +1,14 @@
 <template>
   <main class="main-page">
     <HeroSection />
-    <ServicesSection />
+    <!-- <ServicesSection />
     <ExamplesSection />
     <SpecialOffersSection />
     <TopSalesSection />
     <CatalogSection />
     <FeedbackSection />
     <MainVideoSection />
-    <ContactsSection />
+    <ContactsSection /> -->
   </main>
 </template>
 
