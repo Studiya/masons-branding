@@ -44,34 +44,32 @@
         </div>
       </div>
     </div>
-    <transition name="mobile-menu">
-      <div v-if="mobileMenuIsOpen" class="mobile-menu">
-        <button
-          @click="mobileMenuIsOpen = !mobileMenuIsOpen"
-          class="mobile-menu__close-btn"
-          type="button"
-        >
-          <SvgIcon name="icons" setSymbol="icon-cross" />
-        </button>
-        <div class="mobile-menu__wrapper">
-          <a class="mobile-menu__logo" href="/">
-            <img src="@/assets/images/logo.webp" alt="logo" />
-          </a>
-          <nav class="mobile-menu__nav">
-            <ul class="mobile-menu__nav-list">
-              <li class="mobile-menu__nav-item" v-for="item in navItems" :key="item.id">
-                <a
-                  @click="mobileMenuIsOpen = !mobileMenuIsOpen"
-                  class="mobile-menu__nav-link"
-                  :href="item.href"
-                  >{{ item.text }}</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <div :class="{ 'is-open': mobileMenuIsOpen }" class="mobile-menu">
+      <button
+        @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+        class="mobile-menu__close-btn"
+        type="button"
+      >
+        <SvgIcon name="icons" setSymbol="icon-cross" />
+      </button>
+      <div class="mobile-menu__wrapper">
+        <a class="mobile-menu__logo" href="/">
+          <img src="@/assets/images/logo.webp" alt="logo" />
+        </a>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__nav-list">
+            <li class="mobile-menu__nav-item" v-for="item in navItems" :key="item.id">
+              <a
+                @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+                class="mobile-menu__nav-link"
+                :href="item.href"
+                >{{ item.text }}</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-    </transition>
+    </div>
   </header>
 </template>
 
@@ -136,6 +134,7 @@ let mobileMenuIsOpen = ref(false)
 <style lang="scss" scoped>
 .header {
   @include position(absolute, 0, 0, auto, 0, 1);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(7, 7, 7, 1) 30%);
   .wrapper {
     max-width: 1010px;
   }
@@ -343,20 +342,75 @@ let mobileMenuIsOpen = ref(false)
   }
 
   .mobile-menu {
-    @include transition(transform, 0.3s, ease-in, 0s);
-    &-enter,
-    &-leave-to {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-yellow);
+    transform: translateX(100%);
+    transition: transform 0.4s;
+
+    &.is-open {
       transform: translateX(0);
     }
 
-    &-enter-active,
-    &-leave-active {
-      @include transition(transform, 0.3s, ease-in, 0s);
+    &__wrapper {
+      padding: 30px;
+
+      @media screen and (max-width: $bp-mobile) {
+        padding: 16px 24px;
+      }
     }
 
-    &-enter-to,
-    &-leave {
-      transform: translateX(-100%);
+    &__logo {
+      display: inline-block;
+      width: 184px;
+      height: 63px;
+      fill: var(--color-orange);
+      margin-bottom: 30px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__close-btn {
+      position: absolute;
+      inset: 20px 20px auto auto;
+      background-color: transparent;
+      border: none;
+      width: 24px;
+      height: 23px;
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__nav {
+      margin-bottom: 30px;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      &-link {
+        color: var(--color-dark);
+
+        &:hover,
+        &:active {
+          color: var(--color-black);
+          font-weight: 600;
+        }
+      }
     }
   }
 }

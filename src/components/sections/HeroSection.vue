@@ -14,6 +14,10 @@
 .hero {
   min-height: calc(100vh - 150px);
   margin-bottom: 150px;
+
+  @media screen and (max-width: $bp-mobile) {
+    margin-bottom: 34px;
+  }
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
@@ -24,22 +28,42 @@
     );
     position: relative;
 
+    @media screen and (max-width: $bp-mobile) {
+      background-image: none;
+    }
+
     &:before {
       content: '';
       @include position(absolute, auto, 0, -6px, 0, 1);
       height: 15px;
       background-color: var(--color-black);
       filter: blur(5px);
+
+      @media screen and (max-width: $bp-mobile) {
+        display: none;
+      }
     }
   }
 
   &__inner {
     padding: 296px 0 150px 88px;
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 230px 0 100px 60px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 147px 0 0 30px;
+    }
   }
 
   &__title {
     max-width: 542px;
     margin-bottom: 36px;
+
+    @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__subtitle {
@@ -47,6 +71,12 @@
     font-size: 24px;
     max-width: 500px;
     margin-bottom: 46px;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
   }
 }
 </style>
