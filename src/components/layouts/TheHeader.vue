@@ -37,8 +37,41 @@
             </li>
           </ul>
         </nav>
+        <div class="header__mob-btn">
+          <button type="button" @click="mobileMenuIsOpen = !mobileMenuIsOpen">
+            <SvgIcon name="icons" setSymbol="icon-mob-nav-btn" />
+          </button>
+        </div>
       </div>
     </div>
+    <transition name="mobile-menu">
+      <div v-if="mobileMenuIsOpen" class="mobile-menu">
+        <button
+          @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+          class="mobile-menu__close-btn"
+          type="button"
+        >
+          <SvgIcon name="icons" setSymbol="icon-cross" />
+        </button>
+        <div class="mobile-menu__wrapper">
+          <a class="mobile-menu__logo" href="/">
+            <img src="@/assets/images/logo.webp" alt="logo" />
+          </a>
+          <nav class="mobile-menu__nav">
+            <ul class="mobile-menu__nav-list">
+              <li class="mobile-menu__nav-item" v-for="item in navItems" :key="item.id">
+                <a
+                  @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+                  class="mobile-menu__nav-link"
+                  :href="item.href"
+                  >{{ item.text }}</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -48,37 +81,37 @@ import { ref } from 'vue'
 const navItems = [
   {
     id: 0,
-    href: '#',
+    href: '#services',
     text: 'Services'
   },
   {
     id: 1,
-    href: '#',
+    href: '#examples',
     text: 'Examples'
   },
   {
     id: 2,
-    href: '#',
+    href: '#specialOffers',
     text: 'Special Offers'
   },
   {
     id: 3,
-    href: '#',
+    href: '#topSales',
     text: 'Top Sales'
   },
   {
     id: 4,
-    href: '#',
+    href: '#catalog',
     text: 'Catalog'
   },
   {
     id: 5,
-    href: '#',
+    href: '#feedback',
     text: 'Feedback'
   },
   {
     id: 6,
-    href: '#',
+    href: '#contacts',
     text: 'Contacts'
   }
 ]
@@ -96,6 +129,8 @@ function focusOutSearch() {
     searchValue.value = 'Search'
   }
 }
+
+let mobileMenuIsOpen = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -113,10 +148,32 @@ function focusOutSearch() {
       padding: 20px 15px 16px;
       gap: 25px 30px;
     }
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 20px 20px 0;
+      gap: 20px 15px;
+      flex-wrap: nowrap;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__search,
+  &__logo,
+  &__icons {
+    flex-basis: calc((100% - 40px * 2) / 3);
+
+    @media screen and (max-width: $bp-mobile) {
+      flex-basis: calc((100% - 15px) / 2);
+    }
   }
 
   &__search {
-    flex-basis: calc((100% - 40px * 2) / 3);
+    @media screen and (max-width: $bp-mobile) {
+      flex-grow: 2;
+    }
 
     &-inner {
       max-width: 225px;
@@ -145,8 +202,12 @@ function focusOutSearch() {
   }
 
   &__logo {
-    flex-basis: calc((100% - 40px * 2) / 3);
     text-align: center;
+
+    @media screen and (max-width: $bp-mobile) {
+      order: 1;
+      text-align: left;
+    }
 
     a {
       display: inline-block;
@@ -155,10 +216,16 @@ function focusOutSearch() {
   }
 
   &__icons {
-    flex-basis: calc((100% - 40px * 2) / 3);
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: calc((100% - 15px * 2) / 6);
+    }
 
     &-list {
       @include flex(flex, row, flex-end, center, nowrap, 30px);
+
+      @media screen and (max-width: $bp-mobile) {
+        gap: 20px;
+      }
     }
 
     &-item {
@@ -177,6 +244,10 @@ function focusOutSearch() {
 
   &__nav {
     width: 100%;
+
+    @media screen and (max-width: $bp-tablet) {
+      display: none;
+    }
 
     &-list {
       margin: 0 auto;
@@ -234,6 +305,58 @@ function focusOutSearch() {
           }
         }
       }
+    }
+  }
+
+  &__mob-btn {
+    display: none;
+    flex-basis: calc((100% - 15px * 2) / 6);
+    text-align: right;
+
+    @media screen and (max-width: $bp-tablet) {
+      display: block;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      order: 3;
+    }
+
+    button {
+      width: 31px;
+      height: 22px;
+      background-color: transparent;
+      border: none;
+
+      &:active {
+        svg {
+          transform: scale(0.8);
+        }
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--color-yellow);
+        @include transition(transform, 0.3s, ease-in, 0s);
+      }
+    }
+  }
+
+  .mobile-menu {
+    @include transition(transform, 0.3s, ease-in, 0s);
+    &-enter,
+    &-leave-to {
+      transform: translateX(0);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      @include transition(transform, 0.3s, ease-in, 0s);
+    }
+
+    &-enter-to,
+    &-leave {
+      transform: translateX(-100%);
     }
   }
 }

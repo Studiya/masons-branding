@@ -1,6 +1,6 @@
 <template>
   <main class="main-page">
-    <HeroSection />
+    <!-- <HeroSection /> -->
     <!-- <ServicesSection />
     <ExamplesSection />
     <SpecialOffersSection />
