@@ -15,6 +15,14 @@
   min-height: calc(100vh - 150px);
   margin-bottom: 150px;
 
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
+
   @media screen and (max-width: $bp-mobile) {
     margin-bottom: 34px;
   }

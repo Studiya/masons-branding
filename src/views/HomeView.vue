@@ -1,8 +1,8 @@
 <template>
   <main class="main-page">
     <HeroSection />
-    <!-- <ServicesSection />
-    <ExamplesSection />
+    <ServicesSection />
+    <!-- <ExamplesSection />
     <SpecialOffersSection />
     <TopSalesSection />
     <CatalogSection />

@@ -12,12 +12,34 @@
             <img class="services__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
           </li>
         </ul>
+        <Carousel class="services__list services__list_mobile" v-bind="settings">
+          <Slide v-for="item in servicesList" :key="item.id">
+            <div class="services__item services__item_mobile">
+              <h3 class="services__item-title">{{ item.title }}</h3>
+              <p class="services__item-subtitle">{{ item.subtitle }}</p>
+              <button class="services__item-btn btn btn_grey" type="button">read more</button>
+              <img class="services__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
+            </div>
+          </Slide>
+          <template #addons>
+            <Navigation />
+          </template>
+        </Carousel>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+
+const settings = {
+  itemsToShow: 1,
+  itemsToScroll: 1,
+  snapAlign: 'center'
+}
+
 const servicesList = [
   {
     id: 0,
@@ -62,6 +84,10 @@ const servicesList = [
   margin-bottom: 150px;
   .wrapper {
     max-width: 1090px;
+
+    @media screen and (max-width: $bp-large) {
+      max-width: 1000px;
+    }
   }
 
   &__inner {
@@ -74,12 +100,26 @@ const servicesList = [
 
   &__list {
     @include flex(flex, row, center, flex-start, wrap, 60px 42px);
+
+    &_mobile {
+      display: block;
+      max-width: 305px;
+      margin: 0 auto;
+    }
   }
 
   &__item {
     flex-basis: calc((100% - 42px * 2) / 3);
     position: relative;
     padding: 33px 60px 0;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 33px 36px 0;
+    }
+
+    &_mobile {
+      flex-basis: auto;
+    }
 
     &:after {
       content: '';

@@ -63,15 +63,40 @@ h1 {
 h2 {
   font-size: 72px;
   font-weight: 700;
+
+  @media screen and (max-width: $bp-tablet) {
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    font-size: 30px;
+    font-weight: 600;
+  }
 }
 
 h3 {
   font-size: 48px;
   font-weight: 600;
+
+  @media screen and (max-width: $bp-tablet) {
+    font-size: 42px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    font-size: 30px;
+  }
 }
 
 .subtitle {
   color: var(--color-grey);
   font-size: 32px;
   font-weight: 300;
+
+  @media screen and (max-width: $bp-tablet) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    font-size: 16px;
+  }
 }
