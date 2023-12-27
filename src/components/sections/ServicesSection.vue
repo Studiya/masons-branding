@@ -4,7 +4,7 @@
       <div class="services__inner">
         <h2 class="services__title">Our <span class="accent">Services</span></h2>
         <p class="services__subtitle subtitle">All for your enjoy</p>
-        <ul class="services__list">
+        <ul class="services__list" v-if="!isSmallScreen">
           <li class="services__item" v-for="item in servicesList" :key="item.id">
             <h3 class="services__item-title">{{ item.title }}</h3>
             <p class="services__item-subtitle">{{ item.subtitle }}</p>
@@ -12,7 +12,11 @@
             <img class="services__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
           </li>
         </ul>
-        <Carousel class="services__list services__list_mobile" v-bind="settings">
+        <Carousel
+          class="services__list services__list_mobile"
+          v-if="isSmallScreen"
+          v-bind="settings"
+        >
           <Slide v-for="item in servicesList" :key="item.id">
             <div class="services__item services__item_mobile">
               <h3 class="services__item-title">{{ item.title }}</h3>
@@ -31,8 +35,28 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
+
+let isSmallScreen = ref(false)
+let windowWidth = ref(window.innerWidth)
+
+onMounted(() => {
+  window.addEventListener('resize', handleWindowSizeChange)
+  handleWindowSizeChange()
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', handleWindowSizeChange)
+})
+const handleWindowSizeChange = () => {
+  windowWidth.value = window.innerWidth
+  if (windowWidth.value <= 768) {
+    isSmallScreen.value = true
+  } else {
+    isSmallScreen.value = false
+  }
+}
 
 const settings = {
   itemsToShow: 1,
@@ -96,6 +120,10 @@ const servicesList = [
 
   &__subtitle {
     margin-bottom: 83px;
+
+    @media screen and (max-width: $bp-large) {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
@@ -112,6 +140,7 @@ const servicesList = [
     flex-basis: calc((100% - 42px * 2) / 3);
     position: relative;
     padding: 33px 60px 0;
+    min-width: 305px;
 
     @media screen and (max-width: $bp-large) {
       padding: 33px 36px 0;

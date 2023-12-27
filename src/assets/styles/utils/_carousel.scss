@@ -94,3 +94,21 @@
     right: calc(-43px - 100px) !important;
   }
 }
+
+.services {
+  .carousel__prev {
+    left: calc(-43px) !important;
+
+    @media screen and (max-width: $bp-mobile) {
+      left: calc(-5px) !important;
+    }
+  }
+
+  .carousel__next {
+    right: calc(-43px) !important;
+
+    @media screen and (max-width: $bp-mobile) {
+      right: calc(-5px) !important;
+    }
+  }
+}
