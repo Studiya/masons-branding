@@ -106,6 +106,14 @@ const servicesList = [
 <style lang="scss" scoped>
 .services {
   margin-bottom: 150px;
+
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
   .wrapper {
     max-width: 1090px;
 
@@ -123,6 +131,10 @@ const servicesList = [
 
     @media screen and (max-width: $bp-large) {
       margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-bottom: 36px;
     }
   }
 

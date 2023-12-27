@@ -22,10 +22,6 @@
   @media screen and (max-width: $bp-tablet) {
     margin-bottom: 56px;
   }
-
-  @media screen and (max-width: $bp-mobile) {
-    margin-bottom: 34px;
-  }
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
@@ -61,7 +57,7 @@
     }
 
     @media screen and (max-width: $bp-mobile) {
-      padding: 147px 0 0 30px;
+      padding: 180px 0 0 30px;
     }
   }
 

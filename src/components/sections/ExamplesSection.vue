@@ -4,7 +4,7 @@
       <div class="examples__inner">
         <h3 class="examples__title"><span class="accent">Exam</span>ples</h3>
         <p class="examples__subtitle subtitle">You can wear it</p>
-        <Carousel class="examples__carousel" v-bind="settings">
+        <Carousel class="examples__carousel" v-bind="settings" :breakpoints="breakpoints">
           <Slide class="examples__slide" v-for="item in examplesList" :key="item.id">
             <a :href="item.href" target="_blank"><img :src="item.imgSrc" :alt="item.imgAlt" /></a
           ></Slide>
@@ -22,9 +22,23 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const settings = {
-  itemsToShow: 3,
-  itemsToScroll: 3,
+  itemsToShow: 1,
+  itemsToScroll: 1,
   snapAlign: 'center'
+}
+
+const breakpoints = {
+  1024: {
+    itemsToShow: 3,
+    itemsToScroll: 3,
+    snapAlign: 'center'
+  },
+
+  768: {
+    itemsToShow: 2,
+    itemsToScroll: 2,
+    snapAlign: 'start'
+  }
 }
 
 const examplesList = [
@@ -77,6 +91,14 @@ const examplesList = [
 .examples {
   margin-bottom: 150px;
 
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
+
   .wrapper {
     max-width: 1440px;
   }
@@ -84,6 +106,18 @@ const examplesList = [
   &__inner {
     max-width: 1056px;
     margin: 0 auto;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 0 30px;
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      max-width: 800px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      max-width: 320px;
+    }
   }
 
   &__subtitle {

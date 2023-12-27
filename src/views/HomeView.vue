@@ -2,8 +2,8 @@
   <main class="main-page">
     <HeroSection />
     <ServicesSection />
-    <!-- <ExamplesSection />
-    <SpecialOffersSection />
+    <ExamplesSection />
+    <!-- <SpecialOffersSection />
     <TopSalesSection />
     <CatalogSection />
     <FeedbackSection />
