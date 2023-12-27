@@ -48,17 +48,25 @@
   .carousel__next {
     display: block;
     &:before {
-      border-left: 2px solid var(--color-black);
-      border-top: 2px solid var(--color-black);
+      border-left: 4px solid var(--color-black);
+      border-top: 4px solid var(--color-black);
     }
   }
 
   .carousel__prev {
     left: -60px !important;
+
+    @media screen and (max-width: $bp-large) {
+      left: -5px !important;
+    }
   }
 
   .carousel__next {
     right: -60px !important;
+
+    @media screen and (max-width: $bp-large) {
+      right: -5px !important;
+    }
   }
 }
 
@@ -105,10 +113,10 @@
   }
 
   .carousel__next {
-    right: calc(-43px) !important;
+    right: -43px !important;
 
     @media screen and (max-width: $bp-mobile) {
-      right: calc(-5px) !important;
+      right: -5px !important;
     }
   }
 }

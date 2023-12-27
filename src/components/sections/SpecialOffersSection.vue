@@ -5,16 +5,23 @@
         <h3 class="special-offers__title"><span class="accent">Special</span> offers</h3>
         <p class="special-offers__subtitle subtitle">Hurry up to order</p>
         <Carousel class="special-offers__carousel" v-bind="settings">
-          <Slide class="special-offers__slide" v-for="item in offersList" :key="item.id">
-            <div class="special-offers__slide-descr">
-              <h4 class="special-offers__slide-title">{{ item.title }}</h4>
-              <p class="special-offers__slide-text">{{ item.text }}</p>
-              <a class="special-offers__slide-btn btn btn_black" :href="item.href" target="_blank">
-                Read more
-              </a>
-            </div>
-            <img class="special-offers__slide-img" :src="item.imgSrc" :alt="item.imgAlt"
-          /></Slide>
+          <Slide v-for="item in offersList" :key="item.id">
+            <div class="special-offers__slide">
+              <div class="special-offers__slide-descr">
+                <h4 class="special-offers__slide-title">{{ item.title }}</h4>
+                <p class="special-offers__slide-text">{{ item.text }}</p>
+                <a
+                  class="special-offers__slide-btn btn btn_black"
+                  :href="item.href"
+                  target="_blank"
+                >
+                  Read more
+                </a>
+              </div>
+              <div class="special-offers__slide-img">
+                <img :src="item.imgSrc" :alt="item.imgAlt" />
+              </div></div
+          ></Slide>
           <template #addons>
             <Navigation />
           </template>
@@ -65,6 +72,14 @@ const offersList = [
 .special-offers {
   margin-bottom: 150px;
 
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
+
   .wrapper {
     max-width: 1440px;
     @include backgroundImg(
@@ -73,11 +88,19 @@ const offersList = [
       100% 600px,
       no-repeat
     );
+
+    @media screen and (max-width: $bp-large) {
+      background-size: 120%;
+    }
   }
 
   &__inner {
     max-width: 1056px;
     margin: 0 auto;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 0 30px;
+    }
   }
 
   &__subtitle {
@@ -85,20 +108,36 @@ const offersList = [
   }
 
   &__slide {
+    @include flex(flex, row, center, center, nowrap, 24px);
     text-align: left;
-    gap: 24px;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 0 40px;
+    }
+
+    &-descr {
+      flex-basis: calc((100% - 24px) / 2);
+    }
 
     &-title {
       color: var(--color-black);
       font-size: 52px;
       font-weight: 700;
       margin-bottom: 10px;
+
+      @media screen and (max-width: $bp-medium) {
+        font-size: 40px;
+      }
     }
 
     &-text {
       color: var(--color-black);
       font-size: 24px;
       margin-bottom: 34px;
+
+      @media screen and (max-width: $bp-medium) {
+        font-size: 20px;
+      }
     }
 
     &-btn {
@@ -108,7 +147,8 @@ const offersList = [
     }
 
     &-img {
-      width: 511px;
+      max-width: 511px;
+      flex-basis: calc((100% - 24px) / 2);
     }
   }
 }

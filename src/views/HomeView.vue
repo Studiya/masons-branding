@@ -3,8 +3,8 @@
     <HeroSection />
     <ServicesSection />
     <ExamplesSection />
-    <!-- <SpecialOffersSection />
-    <TopSalesSection />
+    <SpecialOffersSection />
+    <!-- <TopSalesSection />
     <CatalogSection />
     <FeedbackSection />
     <MainVideoSection />
