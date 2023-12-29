@@ -14,7 +14,7 @@
             <button type="button" @click="filterItemToggle(item)">{{ item.name }}</button>
           </li>
         </ul>
-        <ul class="top-sales__list">
+        <ul class="top-sales__list" v-if="!isSmallScreen">
           <li class="top-sales__item" v-for="item in topSalesList" :key="item.id">
             <a class="top-sales__item-link" :href="item.href" target="_blank">
               <img class="top-sales__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
@@ -23,13 +23,59 @@
             </a>
           </li>
         </ul>
+        <Carousel
+          class="services__list services__list_mobile"
+          v-if="isSmallScreen"
+          v-bind="settings"
+        >
+          <Slide v-for="item in topSalesList" :key="item.id">
+            <div class="top-sales__item top-sales__item_mobile">
+              <a class="top-sales__item-link" :href="item.href" target="_blank">
+                <img class="top-sales__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
+                <p class="top-sales__item-descr">{{ item.descr }}</p>
+                <p class="top-sales__item-price">{{ item.price }}</p>
+              </a>
+            </div>
+          </Slide>
+          <template #addons>
+            <Navigation />
+          </template>
+        </Carousel>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+
+let isSmallScreen = ref(false)
+let windowWidth = ref(window.innerWidth)
+
+onMounted(() => {
+  window.addEventListener('resize', handleWindowSizeChange)
+  handleWindowSizeChange()
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', handleWindowSizeChange)
+})
+const handleWindowSizeChange = () => {
+  windowWidth.value = window.innerWidth
+  if (windowWidth.value <= 480) {
+    isSmallScreen.value = true
+  } else {
+    isSmallScreen.value = false
+  }
+  console.log(isSmallScreen.value)
+}
+
+const settings = {
+  itemsToShow: 1,
+  itemsToScroll: 1,
+  snapAlign: 'center'
+}
 
 const filtersList = [
   {
@@ -81,7 +127,7 @@ const topSalesList = [
   {
     id: 1,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/t-shirt.webp',
+    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'White t-shirt',
     price: '230₴'
@@ -97,7 +143,15 @@ const topSalesList = [
   {
     id: 3,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/t-shirt.webp',
+    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgAlt: 't-shirt',
+    descr: 'White t-shirt',
+    price: '230₴'
+  },
+  {
+    id: 4,
+    href: '#',
+    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'White t-shirt',
     price: '230₴'
@@ -125,8 +179,16 @@ function filterItemToggle(item) {
   }
 
   &__filters {
-    @include flex(flex, row, center, flex-start, wrap, 20px 0);
+    @include flex(flex, row, center, flex-start, wrap, 10px 0);
     margin-bottom: 90px;
+
+    @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 0 10px;
+    }
 
     &-item {
       button {
@@ -138,6 +200,11 @@ function filterItemToggle(item) {
         background-color: transparent;
         cursor: pointer;
         @include transition((color, background-color, box-shadow), 0.3s, ease-in, 0s);
+
+        @media screen and (max-width: $bp-mobile) {
+          font-size: 16px;
+          padding: 8px 12px 9px;
+        }
 
         &:hover {
           color: var(--color-black);
@@ -158,13 +225,28 @@ function filterItemToggle(item) {
 
   &__list {
     @include flex(flex, row, flex-start, flex-start, wrap, 25px 25px);
+
+    &_mobile {
+      padding: 0 10px;
+    }
   }
 
   &__item {
     flex-basis: calc((100% - 25px * 3) / 4);
+    height: 100%;
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: calc((100% - 25px * 2) / 3);
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      flex-basis: unset;
+    }
 
     &-link {
       color: var(--color-light);
+      @include flex(flex, column, space-between, center, nowrap, unset);
+      height: 100%;
 
       &:hover {
         .top-sales__item-img {
@@ -176,7 +258,7 @@ function filterItemToggle(item) {
     &-img {
       max-height: 240px;
       margin-bottom: 26px;
-      @include transition(transform, 0.3s, ease-in, 0);
+      @include transition(transform, 0.3s, ease-in, 0s);
     }
 
     &-descr {

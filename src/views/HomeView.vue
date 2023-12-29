@@ -4,8 +4,8 @@
     <ServicesSection />
     <ExamplesSection />
     <SpecialOffersSection />
-    <!-- <TopSalesSection />
-    <CatalogSection />
+    <TopSalesSection />
+    <!-- <CatalogSection />
     <FeedbackSection />
     <MainVideoSection />
     <ContactsSection /> -->

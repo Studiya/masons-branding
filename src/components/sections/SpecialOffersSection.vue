@@ -1,9 +1,11 @@
 <template>
   <section class="special-offers" id="specialOffers">
     <div class="wrapper">
-      <div class="special-offers__inner">
+      <div class="special-offers__head">
         <h3 class="special-offers__title"><span class="accent">Special</span> offers</h3>
         <p class="special-offers__subtitle subtitle">Hurry up to order</p>
+      </div>
+      <div class="special-offers__inner">
         <Carousel class="special-offers__carousel" v-bind="settings">
           <Slide v-for="item in offersList" :key="item.id">
             <div class="special-offers__slide">
@@ -82,29 +84,50 @@ const offersList = [
 
   .wrapper {
     max-width: 1440px;
-    @include backgroundImg(
-      '@/assets/images/offers-section/offers-bg.webp',
-      center,
-      100% 600px,
-      no-repeat
-    );
-
-    @media screen and (max-width: $bp-large) {
-      background-size: 120%;
-    }
   }
 
-  &__inner {
+  &__head {
     max-width: 1056px;
-    margin: 0 auto;
+    margin: 0 auto -80px;
 
-    @media screen and (max-width: $bp-large) {
+    @media screen and (max-width: $bp-medium) {
       padding: 0 30px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      margin: 0 auto -20px;
     }
   }
 
   &__subtitle {
     color: var(--color-light);
+  }
+
+  &__inner {
+    @include backgroundImg(
+      '@/assets/images/offers-section/offers-bg.webp',
+      center,
+      100% 100%,
+      no-repeat
+    );
+    padding: 100px 0;
+
+    @media screen and (max-width: $bp-medium) {
+      padding: 100px 30px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 100px 10px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 60px 10px;
+    }
+  }
+
+  &__carousel {
+    max-width: 1056px;
+    margin: 0 auto;
   }
 
   &__slide {
@@ -113,6 +136,11 @@ const offersList = [
 
     @media screen and (max-width: $bp-large) {
       padding: 0 40px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      gap: unset;
+      padding: 0 20px;
     }
 
     &-descr {
@@ -126,7 +154,15 @@ const offersList = [
       margin-bottom: 10px;
 
       @media screen and (max-width: $bp-medium) {
-        font-size: 40px;
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $bp-tablet) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $bp-mobile) {
+        font-size: 16px;
       }
     }
 
@@ -137,6 +173,16 @@ const offersList = [
 
       @media screen and (max-width: $bp-medium) {
         font-size: 20px;
+      }
+
+      @media screen and (max-width: $bp-tablet) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $bp-mobile) {
+        font-size: 8px;
+        line-height: 1.5;
+        margin-bottom: 28px;
       }
     }
 

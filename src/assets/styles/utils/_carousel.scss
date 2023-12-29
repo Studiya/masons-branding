@@ -120,3 +120,13 @@
     }
   }
 }
+
+.top-sales {
+  .carousel__prev {
+    left: 0 !important;
+  }
+
+  .carousel__next {
+    right: 0 !important;
+  }
+}

@@ -28,13 +28,13 @@ const settings = {
 }
 
 const breakpoints = {
-  1024: {
+  1025: {
     itemsToShow: 3,
     itemsToScroll: 3,
     snapAlign: 'center'
   },
 
-  768: {
+  769: {
     itemsToShow: 2,
     itemsToScroll: 2,
     snapAlign: 'start'
