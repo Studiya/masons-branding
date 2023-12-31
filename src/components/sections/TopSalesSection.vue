@@ -170,6 +170,14 @@ function filterItemToggle(item) {
 .top-sales {
   text-align: center;
   margin-bottom: 150px;
+
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
   .wrapper {
     max-width: 1100px;
   }
@@ -187,7 +195,9 @@ function filterItemToggle(item) {
     }
 
     @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 30px;
       padding: 0 10px;
+      gap: unset;
     }
 
     &-item {

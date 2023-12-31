@@ -5,8 +5,8 @@
     <ExamplesSection />
     <SpecialOffersSection />
     <TopSalesSection />
-    <!-- <CatalogSection />
-    <FeedbackSection />
+    <CatalogSection />
+    <!-- <FeedbackSection />
     <MainVideoSection />
     <ContactsSection /> -->
   </main>
