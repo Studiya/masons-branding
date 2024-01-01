@@ -105,6 +105,14 @@
 .contacts {
   margin-bottom: 150px;
 
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
+
   .wrapper {
     max-width: 1100px;
   }
@@ -112,23 +120,71 @@
   &__head {
     text-align: center;
     margin-bottom: 100px;
+
+    @media screen and (max-width: $bp-medium) {
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 40px;
+    }
   }
 
   &__form-map {
     @include flex(flex, row, space-between, flex-start, nowrap, 110px);
     margin-bottom: 150px;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 0 20px;
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 40px;
+    }
   }
 
   &-form {
     width: 454px;
 
+    @media screen and (max-width: $bp-medium) {
+      text-align: center;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 430px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: calc(100% - 20px);
+    }
+
     &__block {
       margin-bottom: 30px;
+
+      @media screen and (max-width: $bp-tablet) {
+        margin-bottom: 20px;
+      }
     }
 
     &__btn {
       display: block;
       margin: 50px 0 35px;
+
+      @media screen and (max-width: $bp-medium) {
+        margin: 50px auto 35px;
+      }
+
+      @media screen and (max-width: $bp-mobile) {
+        margin: 30px auto;
+      }
     }
 
     &__soc-list {
@@ -159,12 +215,30 @@
   &__map {
     width: 535px;
     height: 500px;
+
+    @media screen and (max-width: $bp-medium) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      height: 300px;
+    }
   }
 
   &__list {
-    @include flex(flex, row, flex-start, flex-start, wrap, 60px);
+    @include flex(flex, row, center, flex-start, wrap, 60px);
     max-width: 970px;
     margin: 0 auto;
+
+    @media screen and (max-width: $bp-medium) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 0 20px;
+      justify-content: column;
+      gap: 15px;
+    }
   }
 
   &__item {
@@ -174,10 +248,23 @@
     text-align: center;
     padding: 58px 0 76px;
 
+    @media screen and (max-width: $bp-medium) {
+      flex-basis: calc((100% - 30px * 1) / 3);
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: 80%;
+      padding: 20px 0 20px;
+    }
+
     &-icon {
       width: 60px;
       height: 60px;
       margin-bottom: 47px;
+
+      @media screen and (max-width: $bp-tablet) {
+        margin-bottom: 20px;
+      }
     }
 
     &-info {

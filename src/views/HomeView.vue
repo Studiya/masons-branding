@@ -8,7 +8,7 @@
     <CatalogSection />
     <FeedbackSection />
     <MainVideoSection />
-    <!-- <ContactsSection /> -->
+    <ContactsSection />
   </main>
 </template>
 

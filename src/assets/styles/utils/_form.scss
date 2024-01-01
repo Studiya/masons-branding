@@ -1,3 +1,12 @@
+form {
+  .btn {
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+  }
+}
+
 .input-block {
   position: relative;
 
@@ -23,6 +32,10 @@ textarea {
   color: var(--color-yellow);
   font-size: 16px;
   font-weight: 400;
+
+  @media screen and (max-width: $bp-tablet) {
+    padding: 15px 33px 18px;
+  }
 
   &::placeholder {
     color: var(--color-yellow);
