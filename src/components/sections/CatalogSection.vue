@@ -162,6 +162,10 @@ const catalogList = [
     @media screen and (max-width: $bp-tablet) {
       gap: 20px 15px;
     }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0;
+    }
   }
 
   &__item {
@@ -178,6 +182,10 @@ const catalogList = [
       flex-basis: 150px;
       padding: 0;
       background-color: transparent;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      flex-basis: unset;
     }
 
     &-link {

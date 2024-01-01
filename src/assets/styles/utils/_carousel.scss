@@ -121,12 +121,13 @@
   }
 }
 
-.top-sales {
+.top-sales,
+.catalog {
   .carousel__prev {
-    left: 0 !important;
+    left: 25px !important;
   }
 
   .carousel__next {
-    right: 0 !important;
+    right: 25px !important;
   }
 }
