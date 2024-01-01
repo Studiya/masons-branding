@@ -50,6 +50,14 @@ const feedbackList = [
 .feedback {
   text-align: center;
   margin-bottom: 150px;
+
+  @media screen and (max-width: $bp-medium) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-bottom: 56px;
+  }
   .wrapper {
     max-width: 1440px;
   }
@@ -58,6 +66,18 @@ const feedbackList = [
     display: block;
     max-width: 675px;
     margin: 0 auto 100px;
+
+    @media screen and (max-width: $bp-medium) {
+      margin: 0 auto 70px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      margin: 0 auto 50px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0 10px;
+    }
   }
 
   &__inner {
@@ -67,11 +87,31 @@ const feedbackList = [
       100% 600px,
       no-repeat
     );
+
+    @media screen and (max-width: $bp-tablet) {
+      background-size: 100% 485px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      background-size: 100% 340px;
+    }
   }
 
   &__carousel {
     max-width: 440px;
     margin: 0 auto;
+
+    @media screen and (max-width: $bp-medium) {
+      max-width: 320px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      max-width: 240px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      max-width: 166px;
+    }
   }
 }
 </style>

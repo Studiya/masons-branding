@@ -6,9 +6,9 @@
     <SpecialOffersSection />
     <TopSalesSection />
     <CatalogSection />
-    <!-- <FeedbackSection />
+    <FeedbackSection />
     <MainVideoSection />
-    <ContactsSection /> -->
+    <!-- <ContactsSection /> -->
   </main>
 </template>
 

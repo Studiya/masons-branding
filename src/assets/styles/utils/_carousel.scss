@@ -79,8 +79,32 @@
     background-color: var(--color-black);
     border-radius: 50%;
 
+    @media screen and (max-width: $bp-medium) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 44px;
+      height: 44px;
+    }
+
     &:before {
       inset: calc(51% - 12px) calc(47% - 12px) auto auto;
+
+      @media screen and (max-width: $bp-medium) {
+        inset: calc(51% - 12px) calc(45% - 12px) auto auto;
+      }
+
+      @media screen and (max-width: $bp-mobile) {
+        width: 14px;
+        height: 14px;
+
+        border-left: 4px solid var(--color-light);
+        border-top: 4px solid var(--color-light);
+
+        inset: calc(50% - 7px) calc(40% - 7px) auto auto;
+      }
     }
 
     &:hover {
@@ -95,11 +119,27 @@
   }
 
   .carousel__prev {
-    left: calc(-43px - 100px) !important;
+    left: -143px !important;
+
+    @media screen and (max-width: $bp-medium) {
+      left: -110px !important;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      left: -80px !important;
+    }
   }
 
   .carousel__next {
-    right: calc(-43px - 100px) !important;
+    right: -143px !important;
+
+    @media screen and (max-width: $bp-medium) {
+      right: -110px !important;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      right: -80px !important;
+    }
   }
 }
 
