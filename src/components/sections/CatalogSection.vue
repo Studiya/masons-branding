@@ -54,7 +54,6 @@ const handleWindowSizeChange = () => {
   } else {
     isSmallScreen.value = false
   }
-  console.log(isSmallScreen.value)
 }
 
 const settings = {

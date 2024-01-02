@@ -100,18 +100,53 @@ const navList2 = [
   .wrapper {
     max-width: 1100px;
     padding: 43px 0 66px;
+
+    @media screen and (max-width: $bp-large) {
+      padding: 43px 20px 66px;
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      padding: 43px 40px 66px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0 15px 40px;
+    }
   }
 
   &__inner {
-    @include flex(flex, row, space-between, center, wrap, 75px);
+    @include flex(flex, row, space-between, center, nowrap, 75px);
+
+    @media screen and (max-width: $bp-large) {
+      gap: 40px;
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
   }
 
   &__logo {
     width: 184px;
     margin-bottom: 14px;
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 140px;
+      margin-bottom: 0;
+    }
   }
 
   &__soc {
+    @media screen and (max-width: $bp-medium) {
+      @include flex(flex, row, space-between, center, nowrap, 100px);
+      flex-basis: 100%;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      gap: 30px;
+    }
+
     &-list {
       @include flex(flex, row, flex-start, flex-start, wrap, 30px);
     }
@@ -140,6 +175,14 @@ const navList2 = [
   &__nav {
     @include flex(flex, row, flex-start, flex-start, wrap, 75px);
 
+    @media screen and (max-width: $bp-large) {
+      gap: 40px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: 100%;
+    }
+
     &-title {
       font-size: 24px;
       font-weight: 600;
@@ -148,6 +191,10 @@ const navList2 = [
 
     &-list {
       @include flex(flex, column, flex-start, flex-start, nowrap, 8px);
+
+      @media screen and (max-width: $bp-mobile) {
+        gap: 15px;
+      }
     }
 
     &-item {
@@ -180,6 +227,14 @@ const navList2 = [
   }
 
   &__form {
+    @media screen and (max-width: $bp-medium) {
+      flex-basis: 50%;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: 100%;
+    }
+
     &-title {
       font-size: 20px;
       font-weight: 600;

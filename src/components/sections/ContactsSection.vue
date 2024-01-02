@@ -113,6 +113,10 @@
     margin-bottom: 56px;
   }
 
+  @media screen and (max-width: $bp-mobile) {
+    margin-bottom: 0;
+  }
+
   .wrapper {
     max-width: 1100px;
   }
@@ -127,6 +131,10 @@
 
     @media screen and (max-width: $bp-tablet) {
       margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-bottom: 22px;
     }
   }
 
@@ -148,6 +156,10 @@
 
     @media screen and (max-width: $bp-tablet) {
       margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      gap: 40px;
     }
   }
 
@@ -183,7 +195,7 @@
       }
 
       @media screen and (max-width: $bp-mobile) {
-        margin: 30px auto;
+        margin: 40px auto 13px;
       }
     }
 
@@ -199,6 +211,11 @@
         border-radius: 5px;
         @include flex(flex, row, center, center, nowrap, unset);
         @include transition(transform, 0.3s, ease-in, 0s);
+
+        @media screen and (max-width: $bp-mobile) {
+          width: 32px;
+          height: 32px;
+        }
 
         &:hover {
           transform: scale(1.1);
@@ -239,6 +256,14 @@
       justify-content: column;
       gap: 15px;
     }
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0;
+      justify-content: row;
+      gap: unset;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
   }
 
   &__item {
@@ -257,6 +282,12 @@
       padding: 20px 0 20px;
     }
 
+    @media screen and (max-width: $bp-mobile) {
+      flex-basis: 33%;
+      padding: 25px 0 25px;
+      border-radius: 0;
+    }
+
     &-icon {
       width: 60px;
       height: 60px;
@@ -265,10 +296,20 @@
       @media screen and (max-width: $bp-tablet) {
         margin-bottom: 20px;
       }
+
+      @media screen and (max-width: $bp-mobile) {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 4px;
+      }
     }
 
     &-info {
       font-size: 16px;
+
+      @media screen and (max-width: $bp-mobile) {
+        font-size: 10px;
+      }
 
       a {
         color: var(--color-light);
