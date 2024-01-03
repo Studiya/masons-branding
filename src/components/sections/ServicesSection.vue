@@ -81,7 +81,7 @@ const servicesList = [
     id: 0,
     title: 'Flex/flock film printing',
     subtitle: 'High-quality printing for small runs',
-    imgSrc: 'src/assets/images/services-section/service-1.webp',
+    imgSrc: './src/assets/images/services-section/service-1.webp',
     imgAlt: 'print machine'
   },
   {
