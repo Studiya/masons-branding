@@ -21,7 +21,7 @@
             <h3 class="services__item-title">{{ item.title }}</h3>
             <p class="services__item-subtitle">{{ item.subtitle }}</p>
             <button class="services__item-btn btn btn_grey" type="button">read more</button>
-            <img class="services__item-img" :src="`${item.imgSrc}`" :alt="item.imgAlt" />
+            <img class="services__item-img" :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" />
           </li>
         </ul>
         <Carousel
@@ -76,12 +76,16 @@ const settings = {
   snapAlign: 'center'
 }
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const servicesList = [
   {
     id: 0,
     title: 'Flex/flock film printing',
     subtitle: 'High-quality printing for small runs',
-    imgSrc: 'src/assets/images/services-section/service-1.webp',
+    imgSrc: 'services-section/service-1.webp',
     imgAlt: 'print machine'
   },
   {
