@@ -6,7 +6,7 @@
       <div class="feedback__inner">
         <Carousel class="feedback__carousel" v-bind="settings">
           <Slide class="feedback__slide" v-for="item in feedbackList" :key="item.id">
-            <img class="feedback__slide-img" :src="item.imgSrc" :alt="item.imgAlt"
+            <img class="feedback__slide-img" :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt"
           /></Slide>
           <template #addons>
             <Navigation />
@@ -27,20 +27,24 @@ const settings = {
   snapAlign: 'center'
 }
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const feedbackList = [
   {
     id: 0,
-    imgSrc: 'src/assets/images/feedback-section/iphone.webp',
+    imgSrc: 'feedback-section/iphone.webp',
     imgAlt: 'feedback'
   },
   {
     id: 1,
-    imgSrc: 'src/assets/images/feedback-section/iphone.webp',
+    imgSrc: 'feedback-section/iphone.webp',
     imgAlt: 'feedback'
   },
   {
     id: 2,
-    imgSrc: 'src/assets/images/feedback-section/iphone.webp',
+    imgSrc: 'feedback-section/iphone.webp',
     imgAlt: 'feedback'
   }
 ]

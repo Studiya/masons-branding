@@ -6,7 +6,8 @@
         <p class="examples__subtitle subtitle">You can wear it</p>
         <Carousel class="examples__carousel" v-bind="settings" :breakpoints="breakpoints">
           <Slide class="examples__slide" v-for="item in examplesList" :key="item.id">
-            <a :href="item.href" target="_blank"><img :src="item.imgSrc" :alt="item.imgAlt" /></a
+            <a :href="item.href" target="_blank"
+              ><img :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" /></a
           ></Slide>
           <template #addons>
             <Navigation />
@@ -41,47 +42,51 @@ const breakpoints = {
   }
 }
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const examplesList = [
   {
     id: 0,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 1,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 2,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 3,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 4,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 5,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   },
   {
     id: 6,
     href: '#',
-    imgSrc: 'src/assets/images/examples-section/item.webp',
+    imgSrc: 'examples-section/item.webp',
     imgAlt: 't-shirt'
   }
 ]

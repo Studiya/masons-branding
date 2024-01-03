@@ -21,7 +21,7 @@
                 </a>
               </div>
               <div class="special-offers__slide-img">
-                <img :src="item.imgSrc" :alt="item.imgAlt" />
+                <img :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" />
               </div></div
           ></Slide>
           <template #addons>
@@ -43,12 +43,16 @@ const settings = {
   snapAlign: 'center'
 }
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const offersList = [
   {
     id: 0,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
+    imgSrc: 'offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -56,7 +60,7 @@ const offersList = [
     id: 1,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
+    imgSrc: 'offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   },
@@ -64,7 +68,7 @@ const offersList = [
     id: 2,
     title: 'Russian ship go ... yourself',
     text: 'Buy a T-shirt and 10% of each purchase will go to the needs of the Armed Forces of Ukraine. Buy a stylish T-shirt and support your brother at the front!',
-    imgSrc: 'src/assets/images/offers-section/offer-item.webp',
+    imgSrc: 'offers-section/offer-item.webp',
     imgAlt: 't-shirt',
     href: '#'
   }

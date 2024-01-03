@@ -17,7 +17,7 @@
         <ul class="top-sales__list" v-if="!isSmallScreen">
           <li class="top-sales__item" v-for="item in topSalesList" :key="item.id">
             <a class="top-sales__item-link" :href="item.href" target="_blank">
-              <img class="top-sales__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
+              <img class="top-sales__item-img" :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" />
               <p class="top-sales__item-descr">{{ item.descr }}</p>
               <p class="top-sales__item-price">{{ item.price }}</p>
             </a>
@@ -31,7 +31,11 @@
           <Slide v-for="item in topSalesList" :key="item.id">
             <div class="top-sales__item top-sales__item_mobile">
               <a class="top-sales__item-link" :href="item.href" target="_blank">
-                <img class="top-sales__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
+                <img
+                  class="top-sales__item-img"
+                  :src="getImageUrl(item.imgSrc)"
+                  :alt="item.imgAlt"
+                />
                 <p class="top-sales__item-descr">{{ item.descr }}</p>
                 <p class="top-sales__item-price">{{ item.price }}</p>
               </a>
@@ -114,11 +118,15 @@ const filtersList = [
   }
 ]
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const topSalesList = [
   {
     id: 0,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Yellow sweatshirt',
     price: '230₴'
@@ -126,7 +134,7 @@ const topSalesList = [
   {
     id: 1,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'White t-shirt',
     price: '230₴'
@@ -134,7 +142,7 @@ const topSalesList = [
   {
     id: 2,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Yellow sweatshirt',
     price: '230₴'
@@ -142,7 +150,7 @@ const topSalesList = [
   {
     id: 3,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'White t-shirt',
     price: '230₴'
@@ -150,7 +158,7 @@ const topSalesList = [
   {
     id: 4,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'White t-shirt',
     price: '230₴'

@@ -9,18 +9,6 @@
             <h3 class="services__item-title">{{ item.title }}</h3>
             <p class="services__item-subtitle">{{ item.subtitle }}</p>
             <button class="services__item-btn btn btn_grey" type="button">read more</button>
-            <img
-              class="services__item-img"
-              src="@/assets/images/services-section/service-1.webp"
-              :alt="item.imgAlt"
-            />
-          </li>
-        </ul>
-        <ul class="services__list" v-if="!isSmallScreen">
-          <li class="services__item" v-for="item in servicesList" :key="item.id">
-            <h3 class="services__item-title">{{ item.title }}</h3>
-            <p class="services__item-subtitle">{{ item.subtitle }}</p>
-            <button class="services__item-btn btn btn_grey" type="button">read more</button>
             <img class="services__item-img" :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" />
           </li>
         </ul>
@@ -34,7 +22,7 @@
               <h3 class="services__item-title">{{ item.title }}</h3>
               <p class="services__item-subtitle">{{ item.subtitle }}</p>
               <button class="services__item-btn btn btn_grey" type="button">read more</button>
-              <img class="services__item-img" :src="item.imgSrc" :alt="item.imgAlt" />
+              <img class="services__item-img" :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" />
             </div>
           </Slide>
           <template #addons>
@@ -92,28 +80,28 @@ const servicesList = [
     id: 1,
     title: 'Heat resistance of images',
     subtitle: 'Can withstand automatic washing',
-    imgSrc: 'src/assets/images/services-section/service-2.webp',
+    imgSrc: 'services-section/service-2.webp',
     imgAlt: 'fever'
   },
   {
     id: 2,
     title: 'Flexible scaling',
     subtitle: 'We carry out orders of any size',
-    imgSrc: 'src/assets/images/services-section/service-3.webp',
+    imgSrc: 'services-section/service-3.webp',
     imgAlt: 'printer'
   },
   {
     id: 3,
     title: 'Heat resistance of images',
     subtitle: 'Can withstand automatic washing',
-    imgSrc: 'src/assets/images/services-section/service-2.webp',
+    imgSrc: 'services-section/service-2.webp',
     imgAlt: 'fever'
   },
   {
     id: 4,
     title: 'Flexible scaling',
     subtitle: 'We carry out orders of any size',
-    imgSrc: 'src/assets/images/services-section/service-3.webp',
+    imgSrc: 'services-section/service-3.webp',
     imgAlt: 'printer'
   }
 ]

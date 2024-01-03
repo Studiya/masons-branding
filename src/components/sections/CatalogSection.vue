@@ -7,7 +7,7 @@
         <ul class="catalog__list" v-if="!isSmallScreen">
           <li class="catalog__item" v-for="item in catalogList" :key="item.id">
             <a class="catalog__item-link" :href="item.href" target="_blank">
-              <img :src="item.imgSrc" :alt="item.imgAlt" class="catalog__item-img" />
+              <img :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" class="catalog__item-img" />
               <p class="catalog__item-descr">{{ item.descr }}</p>
               <p class="catalog__item-details">{{ item.details }}</p>
             </a>
@@ -17,7 +17,7 @@
           <Slide v-for="item in catalogList" :key="item.id">
             <div class="catalog__item">
               <a class="catalog__item-link" :href="item.href" target="_blank">
-                <img :src="item.imgSrc" :alt="item.imgAlt" class="catalog__item-img" />
+                <img :src="getImageUrl(item.imgSrc)" :alt="item.imgAlt" class="catalog__item-img" />
                 <p class="catalog__item-descr">{{ item.descr }}</p>
                 <p class="catalog__item-details">{{ item.details }}</p>
               </a>
@@ -62,11 +62,15 @@ const settings = {
   snapAlign: 'center'
 }
 
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/${name}`, import.meta.url).href
+}
+
 const catalogList = [
   {
     id: 0,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Sweatshirt',
     details: 'Eco materials'
@@ -74,7 +78,7 @@ const catalogList = [
   {
     id: 1,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'Sweatshirt',
     details: 'Eco materials'
@@ -82,7 +86,7 @@ const catalogList = [
   {
     id: 2,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Sweatshirt',
     details: 'Eco materials'
@@ -90,7 +94,7 @@ const catalogList = [
   {
     id: 3,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'T-shirt',
     details: 'Eco materials'
@@ -98,7 +102,7 @@ const catalogList = [
   {
     id: 4,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Sweatshirt',
     details: 'Eco materials'
@@ -106,7 +110,7 @@ const catalogList = [
   {
     id: 5,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'T-shirt',
     details: 'Eco materials'
@@ -114,7 +118,7 @@ const catalogList = [
   {
     id: 6,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 'sweatshirt',
     descr: 'Sweatshirt',
     details: 'Eco materials'
@@ -122,7 +126,7 @@ const catalogList = [
   {
     id: 7,
     href: '#',
-    imgSrc: 'src/assets/images/top-sales-section/sweatshirt.webp',
+    imgSrc: 'top-sales-section/sweatshirt.webp',
     imgAlt: 't-shirt',
     descr: 'T-shirt',
     details: 'Eco materials'
